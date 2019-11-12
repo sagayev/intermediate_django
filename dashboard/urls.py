@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from news.views import scrape, news_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('notes/', include('notepad.urls')),
     path('glossary/', include('django_glossary.urls')),
+    path('scrape/', scrape, name='scrape'),
+    path('home/', news_list, name='home'),
 ]
