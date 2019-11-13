@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'notepad',
     'django_glossary',
     'news',
+    'finance',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
