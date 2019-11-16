@@ -15,15 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from news.views import scrape, news_list
+from news.views import scrape
 from finance.views import company_article_list, ChartData
+from .views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('notes/', include('notepad.urls')),
     path('glossary/', include('django_glossary.urls')),
     path('scrape/', scrape, name='scrape'),
-    path('home/', news_list, name='home'),
+    path('home/', home, name='home'),
     path('companies/', company_article_list, name='companies'),
     path('companies/api/chart/data/', ChartData.as_view(), name='api-chart-data'),
 ]

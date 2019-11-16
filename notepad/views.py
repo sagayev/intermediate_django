@@ -9,7 +9,7 @@ def create_view(request):
     if form.is_valid():
         form.instance.user = request.user
         form.save()
-        return redirect('/')
+        return redirect('/home') #changed after merging the views under dashboard
 
     context = {
         'form': form
@@ -35,7 +35,7 @@ def update_view(request, id):
     if form.is_valid():
         form.instance.user = request.user
         form.save()
-        return redirect('/')
+        return redirect('/home')
 
     context = {
         'form': form
